@@ -145,7 +145,10 @@ async function fetchStats() {
         return;
     }
     try {
-        const response = await fetch(`https://fortnite-api.com/v2/stats/br/v2?name=${encodeURIComponent(name)}&accountType=epic&image=all`, { headers });
+        const encodedName = encodeURIComponent(name);
+        const url = `https://fortnite-api.com/v2/stats/br/v2?name=${encodedName}&accountType=epic&image=all`;
+        console.log(`Fetching stats for: ${name} at ${url}`); // Debug: Log the request
+        const response = await fetch(url, { headers });
         const data = await response.json();
         content.innerHTML = '';
         if (data.status === 200) {
@@ -177,11 +180,14 @@ async function fetchStats() {
             });
             table.appendChild(tbody);
             content.appendChild(table);
+        } else if (data.status === 403) {
+            content.innerHTML = `Errore: Le statistiche per "${name}" non sono pubbliche. Imposta le statistiche come pubbliche nelle impostazioni del tuo account Epic Games. (Codice: 403)`;
         } else {
-            content.innerHTML = 'Errore: Assicurati che il nome del giocatore sia corretto e che sia un account Epic Games.';
+            content.innerHTML = `Errore: Impossibile trovare le statistiche per "${name}". Verifica che il nome sia corretto e che l'account sia Epic Games. (Codice: ${data.status})`;
         }
     } catch (error) {
-        content.innerHTML = 'Errore: ' + error.message;
+        content.innerHTML = `Errore di rete: ${error.message}. Verifica la connessione o il nome del giocatore.`;
+        console.error('Fetch stats error:', error); // Debug: Log the error
     }
 }
 
