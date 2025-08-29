@@ -1,7 +1,7 @@
 const apiKey = 'b0d2c9cd-ccb0-40d9-9a86-37f4153ebfaa';
 const language = 'it';
 const headers = { 'Authorization': apiKey };
-const backendUrl = 'http://lea-script.tech:40005'; // URL del backend Node.js
+const backendUrl = 'https://jtf.weissx.net'; // URL del backend Node.js
 
 // Mostra una sezione specifica e nasconde le altre
 function showSection(sectionId) {
