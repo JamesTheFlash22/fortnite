@@ -307,6 +307,173 @@ nav button.active {
     font-size: 0.7rem;
 }
 
+/* Aggiunte al CSS esistente per la watchlist */
+
+/* Login Form */
+#login-form {
+    background-color: var(--card-bg);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.4);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#login-form input {
+    padding: 8px;
+    margin: 5px;
+    border-radius: 6px;
+    border: none;
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    font-size: 0.9rem;
+    width: 80%;
+}
+
+#login-form button {
+    background: linear-gradient(to right, #28a745, #1e7e34);
+    color: var(--text-color);
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-family: var(--fortnite-font);
+    font-size: 1rem;
+    transition: transform 0.3s;
+}
+
+#login-form button:hover {
+    transform: scale(1.05);
+}
+
+/* Admin Section */
+#admin-section {
+    background-color: var(--card-bg);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.4);
+    margin-bottom: 15px;
+}
+
+#admin-section h3 {
+    font-family: var(--fortnite-font);
+    margin-bottom: 10px;
+}
+
+#admin-form input {
+    padding: 8px;
+    margin: 5px 0;
+    width: 100%;
+    border-radius: 6px;
+    border: none;
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+}
+
+#admin-form button {
+    background: linear-gradient(to right, #ffc107, #e0a800);
+    color: var(--text-color);
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-family: var(--fortnite-font);
+    margin-top: 10px;
+}
+
+#user-list {
+    margin-top: 15px;
+}
+
+.user-item {
+    background-color: var(--dark-bg);
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-item button {
+    background: linear-gradient(to right, #dc3545, #c82333);
+    color: var(--text-color);
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+/* Search and Lists */
+#search-section {
+    margin-bottom: 15px;
+}
+
+#cosmetic-search {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+#results-list, #selected-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.cosmetic-item {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+    transition: transform 0.3s;
+    width: 140px; /* Dimensione ottimizzata per mobile */
+}
+
+.cosmetic-item:hover {
+    transform: scale(1.03);
+}
+
+.cosmetic-item img {
+    width: 100%;
+    max-height: 100px; /* Limita altezza per mobile */
+    object-fit: contain;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.cosmetic-item h4 {
+    font-family: var(--fortnite-font);
+    font-size: 0.9rem;
+    margin: 5px 0;
+}
+
+.cosmetic-item p {
+    font-size: 0.7rem;
+}
+
+.cosmetic-item button {
+    background: linear-gradient(to right, #007bff, #0056b3);
+    color: var(--text-color);
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+.cosmetic-item button.remove {
+    background: linear-gradient(to right, #dc3545, #c82333);
+}
+
 @media (max-width: 600px) {
     header h1 {
         font-size: 1.8rem;
@@ -375,5 +542,21 @@ nav button.active {
     .shop-title {
         font-size: 1.3rem;
         margin-bottom: 8px;
+    }
+
+    .cosmetic-item {
+        width: 120px;
+    }
+
+    .cosmetic-item img {
+        max-height: 80px;
+    }
+
+    .cosmetic-item h4 {
+        font-size: 0.8rem;
+    }
+
+    .cosmetic-item p {
+        font-size: 0.6rem;
     }
 }
