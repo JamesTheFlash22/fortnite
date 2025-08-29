@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortnite Info Viewer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Fortnite Info Viewer</h1>
+    </header>
+    <nav>
+        <button id="shop-btn">Shop</button>
+        <button id="map-btn">Mappa</button>
+        <button id="news-btn">News</button>
+        <button id="stats-btn">Stats</button>
+        <button id="watchlist-btn">Watchlist</button> <!-- Nuovo pulsante per la watchlist -->
+    </nav>
+    <div id="content">
+        <div id="shop" class="section">
+            <h2 class="shop-title">Shop Attuale</h2>
+            <div id="shop-content"></div>
+        </div>
+        <div id="map" class="section">
+            <h2>Mappa Battle Royale</h2>
+            <img id="map-image" src="" alt="Mappa Battle Royale">
+        </div>
+        <div id="news" class="section">
+            <h2>News Attuali</h2>
+            <div id="news-content"></div>
+        </div>
+        <div id="stats" class="section">
+            <h2>Stats Giocatore Battle Royale</h2>
+            <form id="stats-form">
+                <input type="text" id="player-name" placeholder="Nome Giocatore" required>
+                <button type="button" id="stats-search-btn">Cerca</button>
+            </form>
+            <div id="stats-content" class="stats-section"></div>
+            <img id="stats-image" src="" alt="Immagine Stats" style="display: none; width: 100%; border-radius: 8px; margin-top: 10px;">
+        </div>
+        <div id="watchlist" class="section">
+            <!-- Contenuto della watchlist caricato dinamicamente -->
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
